@@ -1,11 +1,28 @@
-## Available Scripts
+# Frontend Setup Instructions
 
-In the project directory, you can run:
+## 1. Clone the Repository
 
-### `npm start`
+First, clone the frontend repository from GitHub:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```sh
+git clone https://github.com/gitprajapati/lyrics_masti_game_frontend.git
+cd lyrics_masti_game_frontend
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 2. Install Dependencies
+
+Run the following command to install all necessary packages:
+
+```sh
+npm install
+```
+
+## 3. Start the React Application
+
+Once dependencies are installed, start the development server:
+
+```sh
+npm start
+```
+
+This will launch the application on `http://localhost:3000/`.
