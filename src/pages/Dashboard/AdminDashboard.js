@@ -14,9 +14,12 @@ const AdminDashboard = () => {
   const fetchSongs = async () => {
     try {
       const token = localStorage.getItem("access_token");
-      const response = await axios.get("http://127.0.0.1:5000/songs", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await axios.get(
+        "https://lyrics-masti-game-backend.vercel.app/songs",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setSongs(response.data);
     } catch (error) {
       console.error("Error fetching songs:", error);
@@ -35,12 +38,16 @@ const AdminDashboard = () => {
       const token = localStorage.getItem("access_token");
       const requestData = { title: title.trim(), artist: artist.trim() };
 
-      await axios.post("http://127.0.0.1:5000/songs", requestData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      await axios.post(
+        "https://lyrics-masti-game-backend.vercel.app/songs",
+        requestData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       setTitle("");
       setArtist("");
@@ -64,7 +71,7 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("access_token");
       await axios.put(
-        `http://127.0.0.1:5000/songs/${editingSong.id}`,
+        `https://lyrics-masti-game-backend.vercel.app/songs/${editingSong.id}`,
         { title, artist },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -82,9 +89,12 @@ const AdminDashboard = () => {
 
     try {
       const token = localStorage.getItem("access_token");
-      await axios.delete(`http://127.0.0.1:5000/songs/${songId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `https://lyrics-masti-game-backend.vercel.app/songs/${songId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       fetchSongs();
     } catch (error) {

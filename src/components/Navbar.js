@@ -16,9 +16,12 @@ const Navbar = ({ setIsLoggedIn }) => {
         return;
       }
 
-      await axios.delete("http://127.0.0.1:5000/logout", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        "https://lyrics-masti-game-backend.vercel.app/logout",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
 
       alert("Logged out successfully!");
     } catch (error) {

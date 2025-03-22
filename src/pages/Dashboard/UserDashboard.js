@@ -23,7 +23,9 @@ function UserDashboard() {
     setUserGuess("");
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/generate-lyrics");
+      const res = await fetch(
+        "https://lyrics-masti-game-backend.vercel.app/generate-lyrics"
+      );
       const data = await res.json();
 
       if (res.ok) {

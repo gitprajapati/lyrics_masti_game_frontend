@@ -16,10 +16,13 @@ const Login = () => {
     setErrorMessage("");
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://lyrics-masti-game-backend.vercel.app/login",
+        {
+          email,
+          password,
+        }
+      );
 
       localStorage.setItem("access_token", response.data.token);
       localStorage.setItem("isLoggedIn", true);
@@ -35,7 +38,7 @@ const Login = () => {
   const handleDirectRegister = async () => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/direct-register"
+        "https://lyrics-masti-game-backend.vercel.app/direct-register"
       );
 
       localStorage.setItem("isLoggedIn", true);
